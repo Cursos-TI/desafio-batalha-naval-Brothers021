@@ -5,9 +5,11 @@
 // Siga os comentários para implementar cada parte do desafio.
 
 int main() {
-    char linha [10] = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'};
+    char colunas [10] = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'};
 //criando tabuleiro 10x10
     int tabuleiro [10][10];
+
+    printf(" Exibindo o tabuleiro:\n");
 
  // iniciar o tabuleiro com água 0
     for (int i = 0; i < 10; i++)
@@ -18,7 +20,7 @@ int main() {
         }
     }
 // posiçionando navios no tabuleiro horizontalmente tamanho 3
-    for (int j = 0; j < 3; j++) {
+    for (int j = 4; j < 7; j++) {
         tabuleiro[2][j] = 3;
     }
  // posiçionando o navio na vertical tamanho 3
@@ -26,19 +28,20 @@ int main() {
         tabuleiro[i][7] = 3;
     }
 // aparecer cabeçalho da coluna
-    printf(" 0 1 2 3 4 5 6 7 8 9\n");
+    printf("  ");
     for (int j = 0; j < 10; j++){
-        printf("%2d ", j);
+        printf(" %c ", colunas[j]);
     }
     printf("\n");
 
 
-// aparecer o tabuleiro
+// aparecer o tabuleiro com números nas linhas
    for (int i = 0; i < 10; i++){
-    printf("%c ", linha[i]);
-   for (int j = 0; j < 10; j++)
+    printf("%d ", i);
+   for (int j = 0; j < 10; j++) {
    printf("%2d ", tabuleiro[i][j]);
 }
    printf("\n");
+}
     return 0;
 }
